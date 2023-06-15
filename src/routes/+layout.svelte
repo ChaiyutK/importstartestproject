@@ -92,7 +92,7 @@
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;600&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+   
 
     /* width */
     :global(::-webkit-scrollbar) {
