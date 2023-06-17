@@ -829,11 +829,13 @@
 
   @media screen and (max-width: 1200px) {
     .header-caption {
+      width: 80%;
       font-size: 0.5rem;
     }
 
     .webheader {
       font-size: 0.5rem;
+      height: auto;
     }
     .webheader > p {
       font-size: 1.2rem;
@@ -911,6 +913,30 @@
     }
     .longsize > p {
       font-size: 0.8rem;
+    }
+    .techstacksection {
+      height: 100%;
+      margin: 50px 0;
+    }
+    .techstack > h1 {
+      font-size: 2rem;
+    }
+    .techstack > h2 {
+      font-size: 1.5rem;
+    }
+    .techstack-menu {
+      padding: 0;
+      flex-wrap: wrap;
+    }
+    .techstack-menu > li {
+      margin: 10px 0;
+      width: 50%;
+    }
+    .techstack-image {
+      width: 100%;
+    }
+    .techstack-image > img {
+      width: 100%;
     }
   }
 </style>

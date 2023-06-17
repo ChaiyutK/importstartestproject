@@ -251,4 +251,29 @@
   a.scroll {
     color: black;
   }
+
+  @media screen and (max-width: 1200px) {
+    .footer {
+      height: 100%;
+      flex-wrap: wrap;
+    }
+    .footer-leftside {
+      width: 61%;
+      border-right: 0px;
+      border-bottom: 1px solid;
+      margin-bottom: 10px;
+    }
+    .footer-navigator {
+      width: 100%;
+    }
+    .footer-detail {
+      width: 100%;
+    }
+    .footer-rightside {
+      width: 40%;
+    }
+    .footer-rightside > p {
+      text-align: center;
+    }
+  }
 </style>
