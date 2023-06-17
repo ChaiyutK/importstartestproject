@@ -187,16 +187,20 @@
     background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     width: 100%;
     height: 160px;
   }
   li.footer-li > a {
     color: black;
+    transition: all 0.3s;
+  }
+  li.footer-li > a:hover {
+    color: rgb(150, 150, 150);
   }
   ul.footer-navigator {
     display: flex;
-    font-size: 0.5rem;
+    font-size: 0.8rem;
     flex-direction: column;
     justify-content: center;
     list-style-type: none;
@@ -205,7 +209,7 @@
   }
   .footer-leftside {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     width: 30%;
     border-right: 1px solid;
   }

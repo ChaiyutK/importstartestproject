@@ -553,6 +553,7 @@
   .cardboard {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     align-items: center;
     height: 50vh;
   }
@@ -824,5 +825,92 @@
   .longsize {
     width: 25%;
     margin-right: 50px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .header-caption {
+      font-size: 0.5rem;
+    }
+
+    .webheader {
+      font-size: 0.5rem;
+    }
+    .webheader > p {
+      font-size: 1.2rem;
+    }
+    .webheader > h2 {
+      font-size: 0.7rem;
+    }
+    .slideshowsection {
+      height: 50vh;
+    }
+    .contentimagesection {
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+    .contentimage-container {
+      flex-direction: column;
+    }
+    .cardsection {
+      height: 100%;
+    }
+    .contentimagesection {
+      height: 100%;
+    }
+    .contentimage-image {
+      width: 100%;
+    }
+    .contentimage-image > img {
+      border-bottom-left-radius: 15px;
+      border-top-right-radius: 0px;
+    }
+    .contentimage-caption {
+      width: 100%;
+      text-align: center;
+    }
+    .contentimage-caption > h2 {
+      margin-top: 20px;
+      width: 100%;
+      padding-left: 0;
+      text-align: center;
+      font-size: 2rem;
+    }
+    .contentimage-caption > p {
+      font-size: 1rem;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .cardboard {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      align-items: center;
+      height: 100%;
+    }
+    .card {
+      width: 60%;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .slidecontent {
+      flex-direction: column;
+    }
+    .slidecontent-caption {
+      width: 80%;
+    }
+    .slidecontent-caption > h2 {
+      font-size: 1rem;
+      text-align: center;
+    }
+    .slidecontent-caption > p {
+      text-align: center;
+    }
+    .longsize {
+      margin-right: 0;
+    }
+    .longsize > p {
+      font-size: 0.8rem;
+    }
   }
 </style>
