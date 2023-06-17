@@ -936,6 +936,12 @@
       width: 100%;
     }
     .techstack-image > img {
+      width: 60%;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .techstack-image > img {
       width: 100%;
     }
   }
