@@ -83,11 +83,11 @@
         {/if}
       </div>
       <ul class="menu">
-        <li class="menu-li"><a on:click={()=>{hamburger = 1}} href="/">Home</a></li>
-        <li class="menu-li"><a on:click={()=>{hamburger = 1}} href="/about">About</a></li>
-        <li class="menu-li"><a on:click={()=>{hamburger = 1}} href="/Service">Service</a></li>
-        <li class="menu-li"><a on:click={()=>{hamburger = 1}} href="Portfolio">Portfolio</a></li>
-        <li class="menu-li"><a on:click={()=>{hamburger = 1}} href="Contactus">Contact Us</a></li>
+        <li class="menu-li"><a class="scroll" on:click={()=>{hamburger = 1}} href="/">Home</a></li>
+        <li class="menu-li"><a class="scroll" on:click={()=>{hamburger = 1}} href="/about">About</a></li>
+        <li class="menu-li"><a class="scroll" on:click={()=>{hamburger = 1}} href="/Service">Service</a></li>
+        <li class="menu-li"><a class="scroll" on:click={()=>{hamburger = 1}} href="Portfolio">Portfolio</a></li>
+        <li class="menu-li"><a class="scroll" on:click={()=>{hamburger = 1}} href="Contactus">Contact Us</a></li>
       </ul>
     </div>
   {:else}
@@ -116,11 +116,11 @@
         {/if}
       </div>
       <ul class="menu">
-        <li class="menu-li"><a on:click={()=>{hamburger = 1}} href="/">Home</a></li>
-        <li class="menu-li"><a on:click={()=>{hamburger = 1}} href="/about">About</a></li>
-        <li class="menu-li"><a on:click={()=>{hamburger = 1}} href="/Service">Service</a></li>
-        <li class="menu-li"><a on:click={()=>{hamburger = 1}} href="Portfolio">Portfolio</a></li>
-        <li class="menu-li"><a on:click={()=>{hamburger = 1}} href="Contactus">Contact Us</a></li>
+        <li class="menu-li"><a class="scroll" on:click={()=>{hamburger = 1}} href="/">Home</a></li>
+        <li class="menu-li"><a class="scroll" on:click={()=>{hamburger = 1}} href="/about">About</a></li>
+        <li class="menu-li"><a class="scroll" on:click={()=>{hamburger = 1}} href="/Service">Service</a></li>
+        <li class="menu-li"><a class="scroll" on:click={()=>{hamburger = 1}} href="Portfolio">Portfolio</a></li>
+        <li class="menu-li"><a class="scroll" on:click={()=>{hamburger = 1}} href="Contactus">Contact Us</a></li>
       </ul>
     </div>
   {/if}
@@ -330,6 +330,9 @@
   a {
     text-decoration: none;
     color: rgb(255, 255, 255);
+  }
+  a.scroll {
+    color: black;
   }
 
   
