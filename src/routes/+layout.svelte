@@ -5,12 +5,15 @@
 
   let ready = false;
   let check;
+  let hamburger = 1;
   let y = 0;
   onMount(() => (ready = true));
 
   checkpage.subscribe((value) => {
     check = value;
   });
+
+
 </script>
 
 <svelte:window bind:scrollY={y} />
@@ -28,14 +31,30 @@
         />
         <p>Import star</p>
       </div>
+      <div class="hamburger">
+        {#if ready && hamburger == 1}
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <p on:click={()=>{
+          hamburger = 0;
+          console.log(y);
+        }}>☰</p>
+        {:else}
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <p on:click={()=>{
+          hamburger = 1;
+          console.log(y);
+        }}>X</p>
+        {/if}
+      </div>
       <ul class="menu">
-        <li class="menu-li"><a href="/">Home</a></li>
-        <li class="menu-li"><a href="/about">About</a></li>
-        <li class="menu-li"><a href="/Service">Service</a></li>
-        <li class="menu-li"><a href="Portfolio">Portfolio</a></li>
-        <li class="menu-li"><a href="Contactus">Contact Us</a></li>
+        <li class="menu-li"><a on:click={()=>{hamburger = 1}} href="/">Home</a></li>
+        <li class="menu-li"><a on:click={()=>{hamburger = 1}} href="/about">About</a></li>
+        <li class="menu-li"><a on:click={()=>{hamburger = 1}} href="/Service">Service</a></li>
+        <li class="menu-li"><a on:click={()=>{hamburger = 1}} href="Portfolio">Portfolio</a></li>
+        <li class="menu-li"><a on:click={()=>{hamburger = 1}} href="Contactus">Contact Us</a></li>
       </ul>
     </div>
+
   {:else if ready && y > 10}
     <div class="navbar-white" transition:fade={{ duration: 500 }}>
       <div class="navbar-logo-container">
@@ -48,16 +67,27 @@
         />
         <p>Import star</p>
       </div>
+      <div class="hamburger">
+        {#if ready && hamburger == 1}
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <p on:click={()=>{
+          hamburger = 0;
+          console.log(y);
+        }}>☰</p>
+        {:else}
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <p on:click={()=>{
+          hamburger = 1;
+          console.log(y);
+        }}>X</p>
+        {/if}
+      </div>
       <ul class="menu">
-        <li class="menu-li"><a class="scroll" href="/">Home</a></li>
-        <li class="menu-li"><a class="scroll" href="/about">About</a></li>
-        <li class="menu-li"><a class="scroll" href="/Service">Service</a></li>
-        <li class="menu-li">
-          <a class="scroll" href="Portfolio">Portfolio</a>
-        </li>
-        <li class="menu-li">
-          <a class="scroll" href="Contactus">Contact Us</a>
-        </li>
+        <li class="menu-li"><a on:click={()=>{hamburger = 1}} href="/">Home</a></li>
+        <li class="menu-li"><a on:click={()=>{hamburger = 1}} href="/about">About</a></li>
+        <li class="menu-li"><a on:click={()=>{hamburger = 1}} href="/Service">Service</a></li>
+        <li class="menu-li"><a on:click={()=>{hamburger = 1}} href="Portfolio">Portfolio</a></li>
+        <li class="menu-li"><a on:click={()=>{hamburger = 1}} href="Contactus">Contact Us</a></li>
       </ul>
     </div>
   {:else}
@@ -72,22 +102,41 @@
         />
         <p>Import star</p>
       </div>
+      <div class="hamburger">
+        {#if ready && hamburger == 1}
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <p on:click={()=>{
+          hamburger = 0;
+        }}>☰</p>
+        {:else}
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <p on:click={()=>{
+          hamburger = 1;
+        }}>X</p>
+        {/if}
+      </div>
       <ul class="menu">
-        <li class="menu-li"><a class="scroll" href="/">Home</a></li>
-        <li class="menu-li"><a class="scroll" href="/about">About</a></li>
-        <li class="menu-li"><a class="scroll" href="/Service">Service</a></li>
-        <li class="menu-li">
-          <a class="scroll" href="Portfolio">Portfolio</a>
-        </li>
-        <li class="menu-li">
-          <a class="scroll" href="Contactus">Contact Us</a>
-        </li>
+        <li class="menu-li"><a on:click={()=>{hamburger = 1}} href="/">Home</a></li>
+        <li class="menu-li"><a on:click={()=>{hamburger = 1}} href="/about">About</a></li>
+        <li class="menu-li"><a on:click={()=>{hamburger = 1}} href="/Service">Service</a></li>
+        <li class="menu-li"><a on:click={()=>{hamburger = 1}} href="Portfolio">Portfolio</a></li>
+        <li class="menu-li"><a on:click={()=>{hamburger = 1}} href="Contactus">Contact Us</a></li>
       </ul>
     </div>
   {/if}
 </nav>
 
-<slot />
+{#if hamburger == 0}
+<ul class="menu-hamburger" transition:fade={{ duration: 500 }}>
+  <li class="ham-li"><a href="/" on:click={()=>{hamburger = 1}}>Home</a></li>
+  <li class="ham-li"><a href="/about" on:click={()=>{hamburger = 1}}>About</a></li>
+  <li class="ham-li"><a href="/Service" on:click={()=>{hamburger = 1}}>Service</a></li>
+  <li class="ham-li"><a href="Portfolio" on:click={()=>{hamburger = 1}}>Portfolio</a></li>
+  <li class="ham-li"><a href="Contactus" on:click={()=>{hamburger = 1}}>Contact Us</a></li>
+</ul>
+{/if}
+
+<slot class="xxx" />
 
 <footer>
   {#if ready}
@@ -123,6 +172,7 @@
 
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300;600&display=swap");
+  
 
   /* width */
   :global(::-webkit-scrollbar) {
@@ -149,16 +199,18 @@
     margin: 0;
     padding: 0;
   }
+
   div.navbar {
     color: white;
     position: fixed;
     background-color: transparent;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     align-items: center;
     width: 100%;
     height: 100px;
-    z-index: 1;
+    z-index: 3;
   }
   div.navbar-white {
     color: rgb(0, 0, 0);
@@ -170,7 +222,7 @@
     width: 100%;
     height: 100px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    z-index: 1;
+    z-index: 3;
   }
   .navbar-logo-container {
     display: flex;
@@ -182,6 +234,37 @@
   }
   .navbar-logo {
     border-radius: 5px;
+  }
+  div.hamburger{
+    cursor: pointer;
+    display: none;
+  }
+  ul.menu-hamburger{
+    display: none;
+    background-color: black;
+    position: fixed;
+    list-style-type: none;
+    z-index: 2;
+    width: 100%;
+    margin: 0;
+    padding-top: 100px;
+    padding-left: 0;
+    text-align: center;
+    height: 100vh;
+  }
+  ul.menu-hamburger > li{
+  margin-top: 10px;
+  }
+  ul.menu-hamburger > li:last-child{
+  padding-bottom: 10px;
+  }
+  ul.menu-hamburger > li > a{
+  color: white;
+  border-bottom: 1px solid white;
+  }
+  ul.menu-hamburger > li > a:hover{
+  color: #fdf28e;
+  border-bottom: 1px solid #fdf28e;
   }
   div.footer {
     background-color: rgb(255, 255, 255);
@@ -248,10 +331,8 @@
     text-decoration: none;
     color: rgb(255, 255, 255);
   }
-  a.scroll {
-    color: black;
-  }
 
+  
   @media screen and (max-width: 1200px) {
     .footer {
       height: 100%;
@@ -276,4 +357,21 @@
       text-align: center;
     }
   }
+
+  @media screen and (max-width: 600px) {
+   ul.menu{
+    display: none;
+   }
+   div.hamburger{
+    display: block;
+    width: 20px;
+   }
+   .hamburger > p{
+    text-align: center;
+   }
+   ul.menu-hamburger{
+    display: block;
+   }
+  }
+ 
 </style>
