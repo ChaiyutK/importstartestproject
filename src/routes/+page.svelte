@@ -59,29 +59,29 @@
 
 <section class="cardsection">
   {#if ready && y > 100}
-    <div class="cardboard" in:fly={{ y: 200, duration: 3000 }} out:fly>
-      <div class="card">
+    <div class="cardboard">
+      <div class="card" in:fly={{ y: 200, duration: 3000 }} out:fly>
         <img src="application.png" alt="" srcset="" />
         <h2>Web Application</h2>
         <p>
           ออกแบบและพัฒนาเว็บแอปพลิเคชันที่ตอบสนองทุกความต้องการของธุรกิจของคุณ
         </p>
       </div>
-      <div class="card">
+      <div class="card" in:fly={{ y: 200, duration: 3000 }} out:fly>
         <img src="web-design.png" alt="" srcset="" />
         <h2>UI / UX Design</h2>
         <p>
           ออกแบบและสร้างสรรค์เว็บไซต์ให้โดดเด่นกว่าคู่แข่งของคุณและใช้งานง่ายไม่ว่าเว็บรูปแบบไหนเราก็พร้อมดีไซน์
         </p>
       </div>
-      <div class="card">
+      <div class="card" in:fly={{ y: 200, duration: 3000 }} out:fly>
         <img src="mobile-app.png" alt="" srcset="" />
         <h2>Mobile Application</h2>
         <p>
           ส่งมอบแอปพลิเคชันเพิ่ใความสะดวกสบายและช่องทางการเข้าถึงธุรกิจของคุณให้ครบถ้วนทุกแพลตฟอร์ม
         </p>
       </div>
-      <div class="card">
+      <div class="card" in:fly={{ y: 200, duration: 3000 }} out:fly>
         <img src="line.png" alt="" srcset="" />
         <h2>Line OA</h2>
         <p>
@@ -95,8 +95,8 @@
 </section>
 
 {#if ready && y > 400}
-  <section class="webheadersection" in:fade={{ duration: 2000 }} out:fade>
-    <div class="webheader">
+  <section class="webheadersection">
+    <div class="webheader" in:fade={{ duration: 2000 }} out:fade>
       <p>Web application</p>
       <h2>เราเข้าใจทุกธุรกิจมีความต้องการที่แตกต่างกัน</h2>
       <h2>
@@ -200,8 +200,8 @@
 </section>
 
 {#if ready && y > 2600}
-  <section class="webheadersection" in:fade={{ duration: 2000 }} out:fade>
-    <div class="webheader">
+  <section class="webheadersection">
+    <div class="webheader" in:fade={{ duration: 2000 }} out:fade>
       <p>Mobile application development</p>
       <h2>ให้ธุรกิจสามารถ เชื่อมต่อเข้ากับลูกค้าของคุณ</h2>
       <h2>
@@ -215,11 +215,8 @@
 <section class="cardsection">
   {#if ready && y > 3000}
     <div
-      class="cardboard boardcenter"
-      in:fly={{ y: 200, duration: 3000 }}
-      out:fly
-    >
-      <div class="card longsize">
+      class="cardboard boardcenter">
+      <div class="card longsize" in:fly={{ y: 200, duration: 3000 }} out:fly>
         <img src="application.png" alt="" srcset="" />
         <h2>Cross-platform / Hybrid Apps</h2>
         <p>
@@ -227,7 +224,7 @@
           ให้ทุกการเชื่อมต่อไหลลื่นทุกระบบการใช้งาน
         </p>
       </div>
-      <div class="card longsize">
+      <div class="card longsize" in:fly={{ y: 200, duration: 3000 }} out:fly>
         <img src="web-design.png" alt="" srcset="" />
         <h2>Enterprise Mobile Solutions</h2>
         <p>
@@ -240,8 +237,8 @@
 </section>
 
 {#if ready && y > 3500}
-  <section class="webheadersection" in:fade={{ duration: 2000 }} out:fade>
-    <div class="webheader">
+  <section class="webheadersection">
+    <div class="webheader" in:fade={{ duration: 2000 }} out:fade>
       <p>Line OA</p>
       <h2>ให้การสร้างธุรกิจและแบรนด์ง่ายขึ้น</h2>
     </div>
@@ -536,9 +533,11 @@
   .card > h2 {
     margin: 0;
     width: 100%;
+    color: #f2b9ff;
   }
   .card > p {
     width: 80%;
+    color: white;
   }
   .header-caption > h1 {
     width: 100%;
@@ -548,9 +547,11 @@
     width: 100%;
   }
   .cardsection {
+    background-color: #28293d;
     height: 50vh;
   }
   .cardboard {
+    background-color: #28293d;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -562,19 +563,22 @@
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
+    background-color: #3b2e5a;
     border-radius: 10px;
     width: 20%;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
       rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
     text-align: center;
     height: 300px;
-    transition: transform 0.6s, background-color 0.6s, color 0.6s;
+    transition: transform 0.6s, background-color 0.6s, color 0.6s,box-shadow 0.6s;
     cursor: pointer;
   }
   .card:hover {
     transform: translateY(10px);
     color: white;
     background-color: #3b2e5a;
+    box-shadow: rgba(245, 245, 247, 0.1) 0px 4px 16px,
+      rgba(251, 251, 253, 0.1) 0px 8px 24px, rgba(247, 247, 250, 0.1) 0px 16px 56px;
   }
   .card > img {
     width: 100px;
@@ -588,12 +592,12 @@
     background-size: 300% 300%;
     background-image: linear-gradient(
       90deg,
-      #9d02fd 0%,
-      #515ada 100%,
-      #510c8a 100%
+      #690ca3 0%,
+      #3b2e5a 50%,
+      #28293d 100%
     );
-    -webkit-animation: AnimateBG 10s ease infinite;
-    animation: AnimateBG 10s ease infinite;
+    -webkit-animation: AnimateBG 5s ease infinite;
+    animation: AnimateBG 5s ease infinite;
   }
 
   @-webkit-keyframes AnimateBG {
@@ -647,12 +651,19 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background: rgb(120,87,255);
+    background: radial-gradient(circle, rgba(120,87,255,1) 0%, rgba(62,54,115,1) 53%, rgba(41,31,93,1) 86%);
   }
   .slideshow {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vw;
+    background-image: url("ipad.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: 80% 80%;
+    height: 100%;
   }
   .slidecontent {
     display: flex;
@@ -675,9 +686,11 @@
   }
   .slidecontent-caption > h2 {
     width: 100%;
+    color: #f2b9ff;
   }
   .slidecontent-caption > p {
     width: 100%;
+    color: white;
   }
   .changepage {
     background-color: #ddd;
@@ -698,6 +711,8 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background: rgb(120,87,255);
+    background: radial-gradient(circle, rgba(120,87,255,1) 0%, rgba(62,54,115,1) 53%, rgba(41,31,93,1) 86%);
   }
 
   .contentimage-container {
@@ -746,8 +761,9 @@
   .techstacksection {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     height: 80vh;
+    background-color: #28293d;
   }
   .techstack {
     text-align: center;
@@ -755,10 +771,11 @@
   }
   .techstack > h2 {
     font-size: 2rem;
-    color: #530ef3;
+    color: #f1d67f;
   }
   .techstack > h1 {
     font-size: 3rem;
+    color: #f2b9ff;
   }
   .techstack-menu {
     display: flex;
@@ -771,7 +788,7 @@
     display: block;
     width: 100%;
     height: 1px;
-    background: #4b4b4b;
+    background: white;
   }
 
   .techstack-menu > li {
@@ -783,7 +800,7 @@
     text-align: center;
     list-style-type: none;
     display: inline-block;
-    color: #000;
+    color: white;
     text-decoration: none;
     cursor: pointer;
   }
@@ -792,7 +809,7 @@
     display: block;
     width: 0;
     height: 3px;
-    background: #3b2e5a;
+    background: #f1d67f;
     transition: width 0.3s;
   }
   .techstack-menu > li > a:hover::after {
@@ -810,8 +827,9 @@
   .techstack-image > img {
     width: 20%;
     height: 150px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    box-shadow: rgba(248, 248, 248, 0.25) 0px 13px 27px -5px,
+      rgba(255, 255, 255, 0.3) 0px 8px 16px -8px;
+      background-color: white;
     margin: 20px;
     transition: all 0.5s;
   }
@@ -846,9 +864,12 @@
     .slideshowsection {
       height: 50vh;
     }
+    .slideshow{
+      background-size: 80% 100%;
+    }
     .contentimagesection {
-      margin-top: 50px;
-      margin-bottom: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
     }
     .contentimage-container {
       flex-direction: column;
@@ -916,7 +937,7 @@
     }
     .techstacksection {
       height: 100%;
-      margin: 50px 0;
+      padding: 50px 0;
     }
     .techstack > h1 {
       font-size: 2rem;
